@@ -1,5 +1,5 @@
 /*
-The signal package traps the signals TERM, INT and HUB and calls a callback
+The signal package traps the signals TERM, INT and HUP and calls a callback
 before exiting.
 */
 package signal
@@ -10,7 +10,7 @@ import (
 	"syscall"
 )
 
-// HandleExit catches SIGTERM, SIGINT and SIGHUB and calls the callback before
+// HandleExit catches SIGTERM, SIGINT and SIGHUP and calls the callback before
 // exiting  the program with the provided return value using os.Exit and thus
 // ignoring all defers.
 func HandleExit(callback func(), retval int) {
